@@ -1,0 +1,22 @@
+{
+  "name": "selenium",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js -f @cucumber/pretty-formatter features/trello.feature",
+    "test:smoke":"cucumber-js -f @cucumber/pretty-formatter features/trello.feature --tags @SmokeTest"
+  },
+  "keywords": [],
+  "type": "module",
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@cucumber/cucumber": "^11.0.1",
+    "@cucumber/pretty-formatter": "^1.0.1",
+    "chai": "^5.1.1"
+  },
+  "dependencies": {
+    "selenium-webdriver": "^4.25.0"
+  }
+}
