@@ -5,7 +5,7 @@ import { Builder, Capabilities,By } from 'selenium-webdriver';
 
 const capabilities = Capabilities.chrome();
 capabilities.set('chromeOptions', { "w3c": false });
-const driver = new Builder().withCapabilities(capabilities).build();
+const driver = new Builder().withCapabilities(capabilities).headless().build();
 
 
   Given('I am on the Trello site login page', async function () {
