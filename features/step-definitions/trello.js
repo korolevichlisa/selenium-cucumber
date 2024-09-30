@@ -4,8 +4,8 @@ import { expect as exChai } from "chai";
 import { Builder, Capabilities,By } from 'selenium-webdriver';
 
 const capabilities = Capabilities.chrome();
-capabilities.set('chromeOptions', { "w3c": false });
-const driver = new Builder().withCapabilities(capabilities).headless().build();
+capabilities.set('chromeOptions', { "w3c": false, "handlesAlerts":true  });
+const driver = new Builder().withCapabilities(capabilities).build();
 
 
   Given('I am on the Trello site login page', async function () {
