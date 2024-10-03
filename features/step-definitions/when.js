@@ -92,11 +92,13 @@ When("I click delete the board", async function () {
   );
   await driver.actions().scroll(0, 0, 0, 0, deleteBoard).perform();
   await deleteBoard.click();
+  await driver.manage().setTimeouts({ implicit: 5000 });
   await driver
     .findElement(
       By.css('button[data-testid="close-board-delete-board-confirm-button"]'),
     )
     .click();
+  await driver.manage().setTimeouts({ implicit: 5000 });
   await driver.findElement(By.css("div.qsCZSrobO7JoSv")).click();
   await driver.manage().setTimeouts({ implicit: 5000 });
 });
