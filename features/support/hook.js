@@ -1,19 +1,14 @@
-// import { Before, AfterAll, BeforeAll } from "@cucumber/cucumber";
-// import { Builder, Capabilities,By } from 'selenium-webdriver';
+import { BeforeAll, AfterAll, Before } from "@cucumber/cucumber";
+import config from "../../config.js";
+import { Builder, Capabilities, By, until } from "selenium-webdriver";
 
-// const capabilities = Capabilities.chrome();
-// capabilities.set('chromeOptions', { "w3c": false });
-// const driver = new Builder().withCapabilities(capabilities).build();
-// Before(async function () {
-//     await driver.get('https://trello.com/login');
-//     await driver.manage().setTimeouts({ implicit: 4000 });
-//     await driver.findElement(By.css('input[data-testid="username"]')).sendKeys('jijis24506@orsbap.com');
-//     await driver.findElement(By.css('#login-submit')).click();
-//     await driver.manage().setTimeouts({ implicit: 4000 });
-//   await driver.findElement(By.css('input[data-testid="password"]')).sendKeys('Crp8xmH8GL=39Fs');
-//   await driver.findElement(By.css('#login-submit')).click();
-// })
+let driver = config.driver;
 
-// AfterAll(function(){
-//     driver.quit()
-// })
+BeforeAll(async function () {
+  await driver.manage().window().maximize();
+  await driver.manage().setTimeouts({ implicit: 10000 });
+});
+
+AfterAll(async function () {
+  await driver.quit();
+});
