@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "cucumber-js -f @cucumber/pretty-formatter features/trello.feature",
-    "test:smoke": "cucumber-js --tags @SmokeTest"
+    "test:smoke": "cucumber-js -f @cucumber/pretty-formatter --tags @SmokeTest"
   },
   "keywords": [],
   "type": "module",
