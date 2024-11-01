@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js -f @cucumber/pretty-formatter features/trello.feature",
+    "test": "cucumber-js -f @cucumber/pretty-formatter features/*.feature",
     "test:smoke": "cucumber-js -f @cucumber/pretty-formatter --tags @SmokeTest"
   },
   "keywords": [],

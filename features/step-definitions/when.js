@@ -11,9 +11,10 @@ When("I login with valid credentials", async function () {
   await driver.findElement(By.css("#login-submit")).click();
   await driver.manage().setTimeouts({ implicit: 9000 });
   await driver
-    .findElement(By.css('input[data-testid="password"]'))
-    .sendKeys("Crp8xmH8GL=39Fs");
+  .findElement(By.css('input[data-testid="password"]'))
+  .sendKeys("Crp8xmH8GL=39Fs");
   await driver.findElement(By.css("#login-submit")).click();
+  await driver.manage().setTimeouts({ implicit: 9000 });
 });
 
 When("I clicked the “user account”", async function () {
@@ -70,7 +71,6 @@ When("I create a card", async function () {
       By.css('form button[data-testid="list-card-composer-add-card-button"]'),
     )
     .click();
-  // await driver.findElement(By.css('button[data-testid="list-composer-add-list-button"]')).click()
 });
 
 When("I clicked the “menu” button", async function () {
@@ -82,8 +82,7 @@ When("I clicked the “menu” button", async function () {
     )
     .click();
   await driver
-    .findElement(By.css(".board-menu-settings-button-react-root button"))
-    .click();
+    .findElement(By.css("div[data-testid='board-menu-current-panel'] button span[data-testid='GearIcon']")).click();
 });
 
 When("I click delete the board", async function () {

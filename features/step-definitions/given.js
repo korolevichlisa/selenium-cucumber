@@ -47,24 +47,9 @@ Given("I am on the created previous board", async function () {
 });
 
 Given("I close this board", async function () {
-  await driver
-    .findElement(By.css("button.css-1l34k60 span.css-7xst2f"))
-    .click();
-  await driver
-    .findElement(
-      By.css(
-        'div.RPO6eTW4FLJhI0 span[data-testid="OverflowMenuHorizontalIcon"]',
-      ),
-    )
-    .click();
-  const closeBoard = await driver.findElement(By.css("button.js-close-board"));
+  const closeBoard = await driver.findElement(By.css("button span span[data-testid='RemoveIcon']"))
   await driver.actions().scroll(0, 0, 0, 0, closeBoard).perform();
+  await driver.sleep(500)
   await closeBoard.click();
-  await driver
-    .findElement(By.css('input[data-testid="close-board-confirm-button"]'))
-    .click();
-
-  // await driver.findElement(By.css('div.RNC8UUAwghG9uA')).click()
-  // await driver.findElement(By.css('div.aIwo0vvYqaDzfq')).click()
-  // await driver.findElement(By.css('popover-close-board-confirm')).click()
+  await driver.findElement(By.css('button[data-testid="popover-close-board-confirm"]')).click();
 });

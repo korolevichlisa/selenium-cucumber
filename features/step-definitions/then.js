@@ -47,13 +47,11 @@ Then("I see the created card", async function () {
 
 Then("I see the ”menu” panel and abilities with workspace", async function () {
   exChai(
-    await driver.findElement(By.css(".board-menu-header-title")).getText(),
+    await driver.findElement(By.css("header h3")).getText(),
   ).to.eql("Налаштування");
 });
 
 Then("I deleted board", async function () {
-  // console.log(await driver.findElement(By.css('span.QMKgZFIlTLiEJN')).getText())
-  // exChai(await driver.findElement(By.css('span.QMKgZFIlTLiEJN'))).to.be.true;
   exChai(
     await driver
       .findElement(By.css("ul.boards-page-board-section-list li:first-of-type"))
